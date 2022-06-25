@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import ViewAgenda from "./components/ViewAgenda";
+import AddAgenda from "./components/AddAgenda";
+import data from "./components/data";
+import app from "./app.css"
 
 function App() {
+  let [currentView,setCurrentView] = useState(0);
+  function changeView(){
+    setCurrentView(prevState =>{
+      prevState = !prevState;
+      return prevState;
+    })
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="viewer-container">
+        <button id="viewer-button" onClick={changeView}>
+          Click to {data[Number(!currentView)]} Agenda
+        </button>
+      </div>
+      <div className="view">
+          {currentView? <AddAgenda />: <ViewAgenda />}
+      </div>
+        
     </div>
   );
 }

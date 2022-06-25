@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: -ms-grid;
+  display: grid;
+  max-width: 800px;
+      grid-template-areas: "view view view view" "content content content content";
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#viewer-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: view;
+  padding: 7% 10%;
+  font-size: 1em;
+  width: 200px;
 }
+
+.view {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: content;
+}
+
+#add-agenda {
+  font-size: 1em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "title title title" "description description description" "topic" "addTopic" "submit";
+}
+
+.input-field {
+  margin: 5% 0;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.input-field label {
+  font-size: 1.4em;
+}
+
+.input-field input {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  width: 700px;
+  height: 35px;
+}
+
+.input-field #title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: title;
+}
+
+.input-field #description {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: description;
+}
+
+.input-field #topic {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: topic;
+  width: 350px;
+}
+
+.input-field #add-topic {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: addTopic;
+}
+
+.input-field #submit {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: submit;
+}
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.App{
+    display: grid;
+    max-width: 800px;
+    grid-template-areas: "view view view view"
+                        "content content content content";
+}
+#viewer-button{
+    grid-area: view;
+    padding: 7% 10%;
+    font-size: 1em;
+    //margin: 20% 50%;
+    width: 200px;
+}
+.view{
+    grid-area: content;
+}
+#add-agenda{
+    //margin: 20% 0;
+    font-size: 1em;
+    display: grid;
+    grid-template-areas: "title title title"
+                        "description description description"
+                        "topic" "addTopic" "submit";
+}
+.input-field{
+
+    margin: 5% 0;
+    width: max-content;
+    label{
+        font-size: 1.4em;
+    }
+    input{
+        margin-top: 1%;
+        margin-bottom: 1%;
+        width: 700px;
+        height: 35px;
+    }
+    #title{
+        grid-area: title;
+    }
+    #description{
+        grid-area: description;
+    }
+    #topic{
+        grid-area: topic;
+        width: 350px;
+    }
+    #add-topic{
+        grid-area: addTopic;
+    }
+    #submit{
+        grid-area: submit;
+    }
+}
